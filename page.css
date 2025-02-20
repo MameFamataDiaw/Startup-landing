@@ -101,7 +101,6 @@ header {
   padding: 30px;
   background-color:rgb(255, 255, 255);
   backdrop-filter: blur(12px);
-
   list-style: none;
   display: none;
   flex-direction: column;
