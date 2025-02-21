@@ -1336,7 +1336,7 @@ header {
 }
 
 .blockTitle {
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
 }
 
 .blockTitle p {
@@ -1358,27 +1358,45 @@ header {
 }
 
 
-.card-content {
+/* .card-content {
   margin-left: auto;
   margin-right: auto;
+  
+}
+
+.swiper-wrapper{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+} */
+
+/* Styles Swiper */
+.card-content.swiper {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.tutorial-card {
+.swiper-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+/* .tutorial-card {
   margin: 0;
   min-width: 0;
   transition: 500ms;
-  /* background-color: #fff; */
-  /* border: none; */
   border-radius: 5px;
+} */
 
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-  /* text-align: left; */
+.tutorial-card.swiper-slide {
+  height: auto; /* Important pour maintenir la hauteur naturelle */
+  border-radius: 5px;
+  background: transparent;
 }
 
-.tutorial-card .card-img {
+/* .tutorial-card .card-img {
   margin: 0;
   min-width: 0;
   overflow: hidden;
@@ -1389,17 +1407,37 @@ header {
 .tutorial-card img {
   width: 100%;
   height: auto;
-  /* object-fit: cover; */
+} */
+
+/* Styles des cartes */
+.card-img {
+  margin: 0;
+  overflow: hidden;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
-.card-txt {
+.card-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* .card-txt {
   padding-top: 15px;
   padding-bottom: 10px;
   margin: 0;
   background-color: #fff;
-  /* padding: 15px 20px; */
   padding-right: 20px;
   padding-left: 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 1px solid #F3F4F5;
+} */
+
+.card-txt {
+  padding: 15px 20px 10px;
+  background-color: #fff;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   border: 1px solid #F3F4F5;
@@ -1440,11 +1478,12 @@ header {
   width: 20px;
   margin-right: 8px;
 }
-
+/* Navigation */
 .caroussel{
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 30px;
 }
 
 .caroussel button{
@@ -1453,15 +1492,37 @@ header {
   background-color: transparent;
   font-size: 16px;
   color: #BBC7D7;
-  width: auto;
+  /* width: auto; */
   padding: 0;
   margin: 0 5px;
-  margin-top: 15px;
+  /* margin-top: 15px; */
   transition: 500ms;
   cursor: pointer;
 }
 .caroussel button:hover{
   color: #8D448B;
+}
+
+/* Media Queries */
+@media (max-width: 767px) {
+  .swiper-slide {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .swiper-slide {
+    width: calc(50% - 10px) !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .swiper-slide {
+    width: calc(33.333% - 14px) !important;
+  }
+  .caroussel {
+    display: none;
+  }
 }
 
 @media (min-width: 1200px) {
